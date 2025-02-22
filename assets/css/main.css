@@ -75,6 +75,40 @@ h6 {
   font-family: var(--heading-font);
 }
 
+
+.social-links {
+  display: flex;
+  align-items: center; /* Vertically center all child elements */
+  justify-content: center; /* Horizontally center all child elements */
+  gap: 10px; /* Add spacing between icons */
+}
+
+/* ArtStation icon */
+.social-links .artstation img {
+  width: 45px; /* Set the size for the ArtStation icon */
+  height: 45px;
+  filter: brightness(0) invert(1); /* Keep the icon white */
+}
+
+/* LinkedIn icon */
+.social-links .linkedin i {
+  font-size: 22px; /* Adjust the size for the LinkedIn icon */
+  color: white; /* Ensure the icon is white */
+}
+
+/* Instagram icon */
+.social-links .instagram i {
+  font-size: 22px; /* Adjust the size for the instagram icon */
+  color: white; /* Ensure the icon is white */
+}
+
+/* Email icon */
+.social-links .email i {
+  font-size: 24px; /* Adjust the size for the Email icon */
+  color: white; /* Ensure the icon is white */
+}
+
+
 /* PHP Email Form Messages
 ------------------------------*/
 .php-email-form .error-message {
@@ -138,7 +172,7 @@ h6 {
   left: 0;
   bottom: 0;
   padding: 0 15px;
-  width: 300px;
+  width: 265px;
   transition: all ease-in-out 0.3s;
   overflow-y: auto;
   z-index: 997;
@@ -146,10 +180,10 @@ h6 {
 }
 
 .header .profile-img img {
-  margin: 15px auto;
+  margin: 30px auto;
   display: block;
-  width: 120px;
-  border: 8px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  width: 200px;
+  
 }
 
 .header .logo {
@@ -197,7 +231,7 @@ h6 {
 
   .header~main,
   .header~#footer {
-    margin-left: 300px;
+    margin-left: 265px;
   }
 }
 
@@ -492,7 +526,7 @@ section,
 .section {
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 60px 0;
+  padding: 0px 0;
   overflow: clip;
 }
 
@@ -507,7 +541,7 @@ section,
 # Global Section Titles
 --------------------------------------------------------------*/
 .section-title {
-  padding-bottom: 60px;
+  padding-bottom: 0px;
   position: relative;
 }
 
@@ -647,7 +681,7 @@ section,
 # Stats Section
 --------------------------------------------------------------*/
 .stats .stats-item {
-  padding: 30px;
+  padding: 0px;
   width: 100%;
 }
 
@@ -679,12 +713,6 @@ section,
 /*--------------------------------------------------------------
 # Skills Section
 --------------------------------------------------------------*/
-.skills .progress {
-  height: 60px;
-  display: block;
-  background: none;
-  border-radius: 0;
-}
 
 .skills .progress .skill {
   color: var(--heading-color);
