@@ -245,9 +245,9 @@ h6 {
   .header~main,
   .header~#footer {
     margin-left: 265px;
-    text-align: center; /* Centers text inside the header */
-  align-items: center; /* Ensures menu items are centered */
-  justify-content: center; /* Centers links if they were flexbox items */
+    
+  
+ 
   }
   
   .header .navmenu ul {
