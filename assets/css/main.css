@@ -8,17 +8,17 @@
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
   --background-color: #d8f0f0; /* Background color for the entire website, including individual sections */
-  --default-color: #021a1c; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #021a1c; /* Color for headings, subheadings and title throughout the website */
+  --default-color: #003337; /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #003337; /* Color for headings, subheadings and title throughout the website */
   --accent-color: #6ffdb9; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #d8f0f0; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #021a1c; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  --contrast-color: #003337; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #021a1c;  /* The default color of the main navmenu links */
-  --nav-hover-color: #021a1c; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-color: #003337;  /* The default color of the main navmenu links */
+  --nav-hover-color: #003337; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #dff0d8; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #e2f0d8; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #6ffdb9; /* Used for navigation links of the dropdown items in the navigation menu. */
@@ -35,9 +35,9 @@
 .dark-background {
   --background-color: #6ffdb9;
   --default-color: #d8f0f0;
-  --heading-color: #151f2b;
-  --surface-color: #151f2b;
-  --contrast-color: #021a1c;
+  --heading-color: #003337;
+  --surface-color: #003337;
+  --contrast-color: #003337;
 }
 
 /* Smooth scroll */
@@ -89,28 +89,28 @@ h6 {
 .social-links .artstation img {
   width: 45px; /* Set the size for the ArtStation icon */
   height: 45px;
-  filter: brightness(0) invert(0); /* Keep the icon white */
+  
+
+  filter:sepia(50%) saturate(300%) brightness(25%);
 }
 
 /* LinkedIn icon */
 .social-links .linkedin i {
   font-size: 22px; /* Adjust the size for the LinkedIn icon */
-  color: white; /* Ensure the icon is white */
-  filter: brightness(0) invert(0);
+  color: var(--heading-color);
 }
 
 /* Instagram icon */
 .social-links .instagram i {
   font-size: 22px; /* Adjust the size for the instagram icon */
-  color: white; /* Ensure the icon is white */
-  filter: brightness(0) invert(0);
+  color: var(--heading-color); /* Ensure the icon is white */
+  
 }
 
 /* Email icon */
 .social-links .email i {
   font-size: 24px; /* Adjust the size for the Email icon */
-  color: white; /* Ensure the icon is white */
-  filter: brightness(0) invert(0);
+  color: var(--heading-color);
 }
 
 
@@ -225,10 +225,10 @@ h6 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: color-mix(in srgb, var(--default-color), transparent 90%);
+  background: var(--default-color);
   color: var(--default-color);
   margin: 0 2px;
-  border-radius: 0;
+  border-radius: 10px;
   text-align: center;
   width: 40px;
   height: 40px;
@@ -671,7 +671,7 @@ section,
   display: block;
   width: 50px;
   height: 3px;
-  background: var(--accent-color);
+  background: var(--heading-color);
   left: 0;
   bottom: 0;
 }
@@ -1421,4 +1421,11 @@ img[src$=".gif"] {
 
 .paddingg {
   padding: 20px 20px;
+}
+.boold {
+  font-weight: bold;
+  color: var(--heading-color);
+}
+.boold:hover {
+  color: var(--heading-color);
 }
