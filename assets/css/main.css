@@ -1,43 +1,43 @@
 
 :root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Raleway",  sans-serif;
-  --nav-font: "Poppins",  sans-serif;
+  --default-font: "Zen Maru Gothic", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --heading-font: "Zen Maru Gothic", sans-serif;
 }
+
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
-  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #ff0000; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #ffff00; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #ee00ff; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #3e28ff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #00ef24; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  --background-color: #d8f0f0; /* Background color for the entire website, including individual sections */
+  --default-color: #021a1c; /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #021a1c; /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #6ffdb9; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --surface-color: #d8f0f0; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+  --contrast-color: #021a1c; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #184200;  /* The default color of the main navmenu links */
-  --nav-hover-color: #000b80; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #4b0040; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #482a00; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #200000; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #414141; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-color: #021a1c;  /* The default color of the main navmenu links */
+  --nav-hover-color: #021a1c; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-mobile-background-color: #dff0d8; /* Used as the background color for mobile navigation menu */
+  --nav-dropdown-background-color: #e2f0d8; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+  --nav-dropdown-color: #6ffdb9; /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color: #6ffdb9; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
-  --background-color: #f4fafd;
-  --surface-color: #ffffff;
+  --background-color: #d8f0f0;
+  --surface-color: #d8f0f0;
 }
 
 .dark-background {
-  --background-color: #00c69e;
-  --default-color: #ffffff;
-  --heading-color: #ffffff;
+  --background-color: #6ffdb9;
+  --default-color: #d8f0f0;
+  --heading-color: #151f2b;
   --surface-color: #151f2b;
-  --contrast-color: #ffffff;
+  --contrast-color: #021a1c;
 }
 
 /* Smooth scroll */
@@ -58,6 +58,8 @@ a {
   color: var(--accent-color);
   text-decoration: none;
   transition: 0.3s;
+  max-width: none !important; /* Removes any max-width restriction */
+  max-height: none !important; /* Removes any max-height restriction */
 }
 
 a:hover {
@@ -87,25 +89,28 @@ h6 {
 .social-links .artstation img {
   width: 45px; /* Set the size for the ArtStation icon */
   height: 45px;
-  filter: brightness(0) invert(1); /* Keep the icon white */
+  filter: brightness(0) invert(0); /* Keep the icon white */
 }
 
 /* LinkedIn icon */
 .social-links .linkedin i {
   font-size: 22px; /* Adjust the size for the LinkedIn icon */
   color: white; /* Ensure the icon is white */
+  filter: brightness(0) invert(0);
 }
 
 /* Instagram icon */
 .social-links .instagram i {
   font-size: 22px; /* Adjust the size for the instagram icon */
   color: white; /* Ensure the icon is white */
+  filter: brightness(0) invert(0);
 }
 
 /* Email icon */
 .social-links .email i {
   font-size: 24px; /* Adjust the size for the Email icon */
   color: white; /* Ensure the icon is white */
+  filter: brightness(0) invert(0);
 }
 
 
@@ -207,6 +212,14 @@ h6 {
   margin: 0 0 20px 0;
 }
 
+.isotope-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* Align items to the left */
+}
+
+
+
 .header .social-links a {
   font-size: 16px;
   display: inline-flex;
@@ -215,7 +228,7 @@ h6 {
   background: color-mix(in srgb, var(--default-color), transparent 90%);
   color: var(--default-color);
   margin: 0 2px;
-  border-radius: 50%;
+  border-radius: 0;
   text-align: center;
   width: 40px;
   height: 40px;
@@ -227,19 +240,84 @@ h6 {
   background: var(--accent-color);
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 600px) {
 
   .header~main,
   .header~#footer {
     margin-left: 265px;
+    text-align: center; /* Centers text inside the header */
+  align-items: center; /* Ensures menu items are centered */
+  justify-content: center; /* Centers links if they were flexbox items */
+  }
+  
+  .header .navmenu ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Ensures menu items are centered */
+    padding: 0;
+  }
+
+  .header .navmenu a {
+    justify-content: center; /* Centers links if they were flexbox items */
+    text-align: center;
+    display: block;
+    width: 100%;
+  }
+
+  .header .profile-img {
+    display: flex;
+    justify-content: center;
+  }
+
+  .header .profile-img img {
+    width: 80%;
+    max-width: 250px;
+    height: auto;
   }
 }
 
-@media (max-width: 1199px) {
+.header-toggle {
+  display: none !important;
+}
+
+@media (max-width: 599px) {
   .header {
-    left: -100%;
+    position: relative;
+    width: 100%;
+    height: auto;
+    left: 0;
+    padding: 20px 15px;
+    border-right: none;
+    border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+    text-align: center; /* Centers text inside the header */
+  }
+
+  .header .navmenu ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Ensures menu items are centered */
+    padding: 0;
+  }
+
+  .header .navmenu a {
+    justify-content: center; /* Centers links if they were flexbox items */
+    text-align: center;
+    display: block;
+    width: 100%;
+  }
+
+  .header .profile-img {
+    display: flex;
+    justify-content: center;
+  }
+
+  .header .profile-img img {
+    width: 80%;
+    max-width: 250px;
+    height: auto;
   }
 }
+
 
 .header.header-show {
   left: 0;
@@ -262,6 +340,42 @@ h6 {
   z-index: 9999;
   transition: background-color 0.3s;
 }
+
+.glightbox-container {
+  max-width: 100% !important;
+  max-height: 100% !important;
+  width: 100vw !important;
+  height: 100vh !important;
+}
+
+.glightbox-container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.glightbox-slide img {
+  width: 100vw !important; /* Make the image take full viewport width */
+  height: 100vh !important; /* Make the image take full viewport height */
+  object-fit: cover !important; /* Ensures the image covers the entire screen */
+  max-width: none !important; /* Removes any max-width restriction */
+  max-height: none !important; /* Removes any max-height restriction */
+}
+
+.glightbox-slide {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.glightbox-slide img {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100vw !important;
+  max-height: 100vh !important;
+  object-fit: contain; /* Ensures the image scales without cropping */
+}
+
 
 .header .header-toggle:hover {
   color: var(--contrast-color);
@@ -289,7 +403,7 @@ h6 {
 .navmenu a,
 .navmenu a:focus {
   color: var(--nav-color);
-  padding: 15px 10px;
+  padding: 0px 10px;
   font-family: var(--nav-font);
   font-size: 16px;
   font-weight: 400;
@@ -328,11 +442,7 @@ h6 {
   color: var(--contrast-color);
 }
 
-.navmenu a:hover,
-.navmenu .active,
-.navmenu .active:focus {
-  color: var(--nav-hover-color);
-}
+
 
 .navmenu a:hover .navicon,
 .navmenu .active .navicon,
@@ -552,6 +662,8 @@ section,
   padding-bottom: 20px;
   position: relative;
 }
+
+
 
 .section-title h2:after {
   content: "";
@@ -840,6 +952,7 @@ section,
   .portfolio .portfolio-filters li {
     font-size: 14px;
     margin: 0 px;
+    
   }
 }
 
@@ -866,7 +979,8 @@ section,
   font-size: 14px;
   padding: 5px 10px;
   font-weight: 400;
-  color: #ffffff;
+  font-weight: bold; 
+  color:var(--heading-color);
   display: inline-block;
   background-color: var(--accent-color);
 }
@@ -1294,5 +1408,17 @@ section,
 # Starter Section Section
 --------------------------------------------------------------*/
 .starter-section {
-  /* Add your styles here */
+  padding: 0px 20px;
+}
+
+img[src$=".gif"] {
+  width: 80vw !important;  /* Full width of the viewport */
+  height: 80vh !important; /* Full height of the viewport */
+  object-fit: contain !important; /* Ensures the whole image is visible */
+  max-width: 100% !important;
+  max-height: 100% !important;
+}
+
+.paddingg {
+  padding: 20px 20px;
 }
