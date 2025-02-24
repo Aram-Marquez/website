@@ -915,5 +915,9 @@ img[src$=".gif"] {
 }
 .bordered-circle {
   border: 10px solid var(--background-color); /* Set the border thickness and color */
+  
+}
+
+.bordered-shadow {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Optional: Add shadow for depth */
 }
