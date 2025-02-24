@@ -5,6 +5,8 @@
 }
 
 
+
+
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
   --background-color: #d8f0f0; /* Background color for the entire website, including individual sections */
@@ -63,7 +65,7 @@ a {
 }
 
 a:hover {
-  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+  color: var(--default-font);
   text-decoration: none;
 }
 
@@ -236,8 +238,8 @@ h6 {
 }
 
 .header .social-links a:hover {
-  color: var(--contrast-color);
-  background: var(--accent-color);
+  color: var(--default-color);
+  background: var(--default-color);
 }
 
 @media (min-width: 600px) {
