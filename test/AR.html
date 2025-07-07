@@ -1,0 +1,554 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v7.0.0/dist/aframe-extras.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          const video1Tracker = document.querySelector('#video1');
+          const video2Tracker = document.querySelector('#video2');
+          const video3Tracker = document.querySelector('#video3');
+          const video4Tracker = document.querySelector('#video4');
+          const video5Tracker = document.querySelector('#video5');
+          const video6Tracker = document.querySelector('#video6');
+      const examplePlane = document.querySelector('#example-plane');
+          
+          // detect target found
+      video1Tracker.addEventListener("targetFound", event => {
+        console.log("target 1 found");
+        sp1.muted = false;
+        sp1.play();
+      });
+      // detect target lost
+      video1Tracker.addEventListener("targetLost", event => {
+        console.log("target 1 lost");
+        sp1.pause();
+      });
+
+      video2Tracker.addEventListener("targetFound", event => {
+        console.log("target 2 found");
+        sp2.muted = true
+        sp2.play();
+        
+      });
+      // detect target lost
+      video2Tracker.addEventListener("targetLost", event => {
+        console.log("target 2 lost");
+        sp2.pause();
+      });
+      video3Tracker.addEventListener("targetFound", event => {
+        console.log("target 3 found");
+        sp3.muted = false;
+        sp3.play();
+      });
+      // detect target lost
+      video3Tracker.addEventListener("targetLost", event => {
+        console.log("target 3 lost");
+        sp3.pause();
+      });
+      video4Tracker.addEventListener("targetFound", event => {
+        console.log("target 4 found");
+        sp4.muted = false;
+        sp4.play();
+      });
+      // detect target lost
+      video4Tracker.addEventListener("targetLost", event => {
+        console.log("target 4 lost");
+        sp4.pause();
+      });
+      video5Tracker.addEventListener("targetFound", event => {
+        console.log("target 5 found");
+        sp5.muted = false;
+        sp5.play();
+      });
+      // detect target lost
+      video5Tracker.addEventListener("targetLost", event => {
+        console.log("target 5 lost");
+        sp5.pause();
+      });
+      video6Tracker.addEventListener("targetFound", event => {
+        console.log("target 6 found");
+        sp6.muted = false;
+        sp6.play();
+      });
+      // detect target lost
+      video6Tracker.addEventListener("targetLost", event => {
+        console.log("target 6 lost");
+        sp6.pause();
+      });
+
+      // detect click event
+      examplePlane.addEventListener("click", event => {
+        console.log("plane click");
+      });
+        });
+      </script>
+    
+  </head>
+  <body>
+    <a-scene
+      mindar-image="imageTargetSrc:./targets.mind ; maxTrack: 1"
+      color-space="sRGB"
+      renderer="colorManagement: true"
+      physicallyCorrectLights
+      xr-mode-ui="enabled: false"
+      vr-mode-ui="enabled: false"
+      device-orientation-permission-ui="enabled: false"
+      
+    > 
+      <a-assets>
+        <video
+          id="sp1"
+          src="./Videos/sp1.mp4"
+          loop="true"
+          autoplay="true"
+        ></video>
+        <video
+          id="sp2"
+          src="./Videos/sp2.mp4"
+          loop="true"
+          autoplay="true"
+        ></video>
+        <video
+          id="sp3"
+          src="./Videos/sp3.mp4"
+          loop="true"
+          autoplay="true"
+        ></video>
+        <video
+          id="sp4"
+          src="./Videos/sp4.mp4"
+          loop="true"
+          autoplay="true"
+        ></video>
+        <video
+          id="sp5"
+          src="./Videos/sp5.mp4"
+          loop="true"
+          autoplay="true"
+        ></video>
+        <video
+          id="sp6"
+          src="./Videos/sp6.mp4"
+          loop="true"
+          autoplay="true"
+        ></video>
+        <a-asset-item
+          id="greenFrame"
+          src="./GLBs/GreenFrame.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="redFrame"
+          src="./GLBs/redFrame.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="whiteMouse"
+          src="./GLBs/WhiteMouse.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="darkMouse"
+          src="./GLBs/DarkMouse.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="greenSnake"
+          src="./GLBs/GreenSnake.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="graySnake"
+          src="./GLBs/GraySnake.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="chapter1"
+          src="./GLBs/chapter1.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="chapter2"
+          src="./GLBs/chapter2.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="chapter3"
+          src="./GLBs/chapter3.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="chapter4"
+          src="./GLBs/chapter4.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="chapter5"
+          src="./GLBs/chapter5.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="chapter6"
+          src="./GLBs/chapter6.glb"
+        ></a-asset-item>
+        <a-asset-item
+        id="extraSnake"
+        src="./GLBs/ExtraSnake.glb"
+      ></a-asset-item>
+      </a-assets>
+      <a-entity raycaster="objects: .clickable" cursor="rayOrigin: mouse;"></a-entity>"
+      <a-camera position="0 0 0" look-controls="enabled: false" cursor="fuse: false; rayOrigin: mouse;" raycaster="near: 10; far: 10000; objects: .clickable"></a-camera>
+
+      <a-entity id="video1" mindar-image-target="targetIndex: 6">
+        <a-video src="#sp1" width="1.4" height="1" position="0 0 0" video-handler id="example-plane" class="clickable">
+        </a-video>
+        <a-gltf-model
+        rotation="0 0 0 "
+        position="-.07 0 .1"
+        scale=".9 .9 .9"
+        src="#redFrame"
+        animation-mixer
+      ></a-gltf-model>
+        <a-gltf-model
+          rotation="0 75 0 "
+          position="-1 -.85 .3"
+          scale="0.3 0.3 0.3"
+          src="#darkMouse"
+          animation-mixer
+        ></a-gltf-model>
+        <a-gltf-model
+          rotation="0 -90 0 "
+          position=".5 .55 .3"
+          scale=".3 .3 .3"
+          src="#graySnake"
+          animation-mixer
+        ></a-gltf-model>
+      </a-entity>
+
+      <a-entity id="video2" mindar-image-target="targetIndex: 7">
+        <a-video src="#sp2" width="1.4" height="1" position="0 0 0" video-handler id="example-plane" class="clickable">
+        </a-video>
+        <a-gltf-model
+        rotation="0 0 0 "
+        position="-.07 0 .1"
+        scale=".9 .9 .9"
+        src="#redFrame"
+        animation-mixer
+      ></a-gltf-model>
+        <a-gltf-model
+          rotation="0 75 0 "
+          position="-1 -.85 .3"
+          scale="0.3 0.3 0.3"
+          src="#darkMouse"
+          animation-mixer
+        ></a-gltf-model>
+        <a-gltf-model
+          rotation="0 -90 0 "
+          position=".5 .55 .3"
+          scale=".3 .3 .3"
+          src="#graySnake"
+          animation-mixer
+        ></a-gltf-model>
+      </a-entity>
+
+      <a-entity id="video3" mindar-image-target="targetIndex: 8">
+        <a-video src="#sp3" width="1.4" height="1" position="0 0 0" video-handler id="example-plane" class="clickable">
+        </a-video>
+        <a-gltf-model
+        rotation="0 0 0 "
+        position="-.07 0 .1"
+        scale=".9 .9 .9"
+        src="#redFrame"
+        animation-mixer
+      ></a-gltf-model>
+        <a-gltf-model
+          rotation="0 75 0 "
+          position="-1 -.85 .3"
+          scale="0.3 0.3 0.3"
+          src="#darkMouse"
+          animation-mixer
+        ></a-gltf-model>
+        <a-gltf-model
+          rotation="0 -90 0 "
+          position=".5 .55 .3"
+          scale=".3 .3 .3"
+          src="#graySnake"
+          animation-mixer
+        ></a-gltf-model>
+      </a-entity>
+
+      <a-entity id="video4" mindar-image-target="targetIndex: 9">
+        <a-video src="#sp4" width="1.4" height="1" position="0 0 0" video-handler id="example-plane" class="clickable">
+        </a-video>
+        <a-gltf-model
+        rotation="0 0 0 "
+        position="-.07 0 .1"
+        scale=".9 .9 .9"
+        src="#redFrame"
+        animation-mixer
+      ></a-gltf-model>
+        <a-gltf-model
+          rotation="0 75 0 "
+          position="-1 -.85 .3"
+          scale="0.3 0.3 0.3"
+          src="#darkMouse"
+          animation-mixer
+        ></a-gltf-model>
+        <a-gltf-model
+          rotation="0 -90 0 "
+          position=".5 .55 .3"
+          scale=".3 .3 .3"
+          src="#graySnake"
+          animation-mixer
+        ></a-gltf-model>
+      </a-entity>
+
+      <a-entity id="video5" mindar-image-target="targetIndex: 10">
+        <a-video src="#sp5" width="1.4" height="1" position="0 0 0" video-handler id="example-plane" class="clickable">
+        </a-video>
+        <a-gltf-model
+        rotation="0 0 0 "
+        position="-.07 0 .1"
+        scale=".9 .9 .9"
+        src="#redFrame"
+        animation-mixer
+      ></a-gltf-model>
+        <a-gltf-model
+          rotation="0 75 0 "
+          position="-1 -.85 .3"
+          scale="0.3 0.3 0.3"
+          src="#darkMouse"
+          animation-mixer
+        ></a-gltf-model>
+        <a-gltf-model
+          rotation="0 -90 0 "
+          position=".5 .55 .3"
+          scale=".3 .3 .3"
+          src="#graySnake"
+          animation-mixer
+        ></a-gltf-model>
+      </a-entity>
+
+      <a-entity id="video6" mindar-image-target="targetIndex: 11">
+        <a-video src="#sp6" width="1.4" height="1" position="0 0 0" video-handler id="example-plane" class="clickable">
+        </a-video>
+        <a-gltf-model
+        rotation="0 0 0 "
+        position="-.07 0 .1"
+        scale=".9 .9 .9"
+        src="#redFrame"
+        animation-mixer
+      ></a-gltf-model>
+        <a-gltf-model
+          rotation="0 75 0 "
+          position="-1 -.85 .3"
+          scale="0.3 0.3 0.3"
+          src="#darkMouse"
+          animation-mixer
+        ></a-gltf-model>
+        <a-gltf-model
+          rotation="0 -90 0 "
+          position=".5 .55 .3"
+          scale=".3 .3 .3"
+          src="#graySnake"
+          animation-mixer
+        ></a-gltf-model>
+      </a-entity>
+
+
+      <a-entity id="gChapter1" mindar-image-target="targetIndex: 0">
+        
+        <a-gltf-model
+        rotation="0 0 0 "
+        position="-.07 0 .1"
+        scale=".9 .9 .9"
+        src="#greenFrame"
+        animation-mixer
+      ></a-gltf-model>
+        <a-gltf-model
+          rotation="0 75 0 "
+          position="-1 -.85 .3"
+          scale="0.3 0.3 0.3"
+          src="#whiteMouse"
+          animation-mixer
+        ></a-gltf-model>
+        <a-gltf-model
+          rotation="0 -90 0 "
+          position=".5 .55 .3"
+          scale=".3 .3 .3"
+          src="#greenSnake"
+          animation-mixer
+        ></a-gltf-model>
+        <a-gltf-model
+          rotation="0 180 0 "
+          position="0 0 .1"
+          scale="2.5 2.5 2.5"
+          src="#chapter1"
+          animation-mixer
+        ></a-gltf-model>
+      </a-entity>
+
+      <a-entity id="gChapter2" mindar-image-target="targetIndex: 1">
+        
+        <a-gltf-model
+        rotation="0 0 0 "
+        position="-.07 0 .1"
+        scale=".9 .9 .9"
+        src="#greenFrame"
+        animation-mixer
+      ></a-gltf-model>
+        <a-gltf-model
+          rotation="0 75 0 "
+          position="-1 -.85 .3"
+          scale="0.3 0.3 0.3"
+          src="#whiteMouse"
+          animation-mixer
+        ></a-gltf-model>
+        <a-gltf-model
+          rotation="0 -90 0 "
+          position=".5 .55 .3"
+          scale=".3 .3 .3"
+          src="#greenSnake"
+          animation-mixer
+        ></a-gltf-model>
+        <a-gltf-model
+          rotation="0 180 0 "
+          position="0 0 .1"
+          scale="2.5 2.5 2.5"
+          src="#chapter2"
+          animation-mixer
+        ></a-gltf-model>
+      </a-entity>
+
+      <a-entity id="gChapter3" mindar-image-target="targetIndex: 2">
+        
+        <a-gltf-model
+        rotation="0 0 0 "
+        position="-.07 0 .1"
+        scale=".9 .9 .9"
+        src="#greenFrame"
+        animation-mixer
+      ></a-gltf-model>
+        <a-gltf-model
+          rotation="0 75 0 "
+          position="-1 -.85 .3"
+          scale="0.3 0.3 0.3"
+          src="#whiteMouse"
+          animation-mixer
+        ></a-gltf-model>
+        <a-gltf-model
+          rotation="0 -90 0 "
+          position=".5 .55 .3"
+          scale=".3 .3 .3"
+          src="#greenSnake"
+          animation-mixer
+        ></a-gltf-model>
+        <a-gltf-model
+          rotation="0 180 0 "
+          position="0 0 .1"
+          scale="2.5 2.5 2.5"
+          src="#chapter3"
+          animation-mixer
+        ></a-gltf-model>
+      </a-entity>
+
+      <a-entity id="gChapter4" mindar-image-target="targetIndex: 3">
+        
+        <a-gltf-model
+        rotation="0 0 0 "
+        position="-.07 0 .1"
+        scale=".9 .9 .9"
+        src="#greenFrame"
+        animation-mixer
+      ></a-gltf-model>
+        <a-gltf-model
+          rotation="0 75 0 "
+          position="-1 -.85 .3"
+          scale="0.3 0.3 0.3"
+          src="#whiteMouse"
+          animation-mixer
+        ></a-gltf-model>
+        <a-gltf-model
+          rotation="0 -90 0 "
+          position=".5 .55 .3"
+          scale=".3 .3 .3"
+          src="#greenSnake"
+          animation-mixer
+        ></a-gltf-model>
+        <a-gltf-model
+          rotation="0 180 0 "
+          position="0 0 .1"
+          scale="2.5 2.5 2.5"
+          src="#chapter4"
+          animation-mixer
+        ></a-gltf-model>
+      </a-entity>
+
+      <a-entity id="gChapter5" mindar-image-target="targetIndex: 4">
+        
+        <a-gltf-model
+        rotation="0 0 0 "
+        position="-.07 0 .1"
+        scale=".9 .9 .9"
+        src="#greenFrame"
+        animation-mixer
+      ></a-gltf-model>
+        <a-gltf-model
+          rotation="0 75 0 "
+          position="-1 -.85 .3"
+          scale="0.3 0.3 0.3"
+          src="#whiteMouse"
+          animation-mixer
+        ></a-gltf-model>
+        <a-gltf-model
+          rotation="0 -90 0 "
+          position=".5 .55 .3"
+          scale=".3 .3 .3"
+          src="#greenSnake"
+          animation-mixer
+        ></a-gltf-model>
+        <a-gltf-model
+          rotation="0 180 0 "
+          position="0 0 .1"
+          scale="2.5 2.5 2.5"
+          src="#chapter5"
+          animation-mixer
+        ></a-gltf-model>
+      </a-entity>
+
+      <a-entity id="gChapter6" mindar-image-target="targetIndex: 5">
+        
+        <a-gltf-model
+        rotation="0 0 0 "
+        position="-.07 0 .1"
+        scale=".9 .9 .9"
+        src="#greenFrame"
+        animation-mixer
+      ></a-gltf-model>
+        <a-gltf-model
+          rotation="0 75 0 "
+          position="-1 -.85 .3"
+          scale="0.3 0.3 0.3"
+          src="#whiteMouse"
+          animation-mixer
+        ></a-gltf-model>
+        <a-gltf-model
+          rotation="0 -90 0 "
+          position=".5 .55 .3"
+          scale=".3 .3 .3"
+          src="#greenSnake"
+          animation-mixer
+        ></a-gltf-model>
+        <a-gltf-model
+          rotation="0 180 0 "
+          position="0 0 .1"
+          scale="2.5 2.5 2.5"
+          src="#chapter6"
+          animation-mixer
+        ></a-gltf-model>
+      </a-entity>
+      <a-entity id="extraSnake" mindar-image-target="targetIndex: 12">
+        
+        <a-gltf-model
+        rotation="0 0 0 "
+        position="0 0.22 0"
+        scale="1.1 1.1 1.1"
+        src="#extraSnake"
+        animation-mixer
+      ></a-gltf-model>
+      </a-entity>
+
+    </a-scene>
+  </body>
+</html>

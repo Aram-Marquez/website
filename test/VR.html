@@ -1,0 +1,142 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v7.0.0/dist/aframe-extras.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+
+        <a-assets>
+            <video
+          id="sp1"
+          src="./Videos/sp1.mp4"
+          loop="true"
+          autoplay="true"
+        ></video>
+        <video
+          id="sp2"
+          src="./Videos/sp2.mp4"
+          loop="true"
+          autoplay="true"
+        ></video>
+        <video
+          id="sp3"
+          src="./Videos/sp3.mp4"
+          loop="true"
+          autoplay="true"
+        ></video>
+        <video
+          id="sp4"
+          src="./Videos/sp4.mp4"
+          loop="true"
+          autoplay="true"
+        ></video>
+        <video
+          id="sp5"
+          src="./Videos/sp5.mp4"
+          loop="true"
+          autoplay="true"
+        ></video>
+        <video
+          id="sp6"
+          src="./Videos/sp6.mp4"
+          loop="true"
+          autoplay="true"
+        ></video>
+       
+     
+      <a-asset-item
+        id="whiteMouse"
+        src="./GLBs/WhiteMouse.glb"
+      ></a-asset-item>
+      <a-asset-item
+        id="darkMouse"
+        src="./GLBs/DarkMouse.glb"
+      ></a-asset-item>
+      <a-asset-item
+        id="greenSnake"
+        src="./GLBs/GreenSnake.glb"
+      ></a-asset-item>
+      <a-asset-item
+        id="graySnake"
+        src="./GLBs/GraySnake.glb"
+      ></a-asset-item>
+      <a-asset-item
+        id="poster"
+        src="./GLBs/FullPosterSceneComplete.glb"
+      ></a-asset-item>
+      <a-asset-item
+        id="extraSnake"
+        src="./GLBs/ExtraSnake.glb"
+      ></a-asset-item>
+      <img id="floor" src="floorTex.jpg">
+      <img id="bg" src="BG.png">
+        </a-assets>
+
+        <a-entity id="completePoster" >
+            <a-video src="#sp1" width=".57" height=".4" position=".58 2.87 -1.98" video-handler id="example-plane" class="clickable" autoplay="true">
+            </a-video>
+            <a-video src="#sp2" width=".57" height=".4" position=".58 2.4 -1.98" video-handler id="example-plane" class="clickable" autoplay="true">
+            </a-video>
+            <a-video src="#sp3" width=".57" height=".4" position=".58 1.9 -1.98" video-handler id="example-plane" class="clickable" autoplay="true">
+            </a-video>
+            <a-video src="#sp4" width=".57" height=".4" position=".58 1.42 -1.98" video-handler id="example-plane" class="clickable" autoplay="true">
+            </a-video>
+            <a-video src="#sp5" width=".57" height=".4" position=".58 .93 -1.98" video-handler id="example-plane" class="clickable" autoplay="true">
+            </a-video>
+            <a-video src="#sp6" width=".57" height=".4" position=".58 .43 -1.98" video-handler id="example-plane" class="clickable" autoplay="true">
+            </a-video>
+            <a-gltf-model
+              rotation="0 0 0 "
+              position="0 2.5 -2"
+              scale="1 1 1"
+              src="#poster"
+              animation-mixer
+            ></a-gltf-model>
+            <a-gltf-model
+              rotation="0 0 0 "
+              position="0 4.4 -1.9"
+              scale="1 1 1"
+              src="#extraSnake"
+              animation-mixer
+            ></a-gltf-model>
+            <a-gltf-model
+              rotation="0 75 0 "
+              position="-1.7 0 -1.9"
+              scale=".6 .6 .6"
+              src="#darkMouse"
+              animation-mixer
+            ></a-gltf-model>
+            <a-gltf-model
+              rotation="0 -60 0 "
+              position="1.6 0 -2"
+              scale=".5 .5 .5"
+              src="#whiteMouse"
+              animation-mixer
+            ></a-gltf-model>
+            <a-gltf-model
+              rotation="0 180 0 "
+              position="1.5 0.1 .2"
+              scale=".3 .3 .3"
+              src="#graySnake"
+              animation-mixer
+            ></a-gltf-model>
+            <a-gltf-model
+              rotation="0 180 0 "
+              position="-1.5 0.1 .2"
+              scale=".3 .3 .3"
+              src="#greenSnake"
+              animation-mixer
+            ></a-gltf-model>
+          </a-entity>
+      <a-plane
+        position="0 0 -1"
+        rotation="-90 0 0"
+        width="4"
+        height="4"
+        material="src: #floor"
+      ></a-plane>
+      <a-sky src="#bg"></a-sky>
+    </a-scene>
+  </body>
+</html>
